@@ -13,10 +13,20 @@ export default function Calculator() {
             setCalculeIsDone(false)
         }
         else{
-            if( value===0 && curectOperation.charAt(curectOperation.length -1 ) === '0' && curectOperation.charAt(0) === '0'){
+            if(value==='.' && curectOperation ==='' ){
+                setCurrentOperation('0.')
             }
             else{
-                setCurrentOperation(curectOperation + value);
+                if( value===0 && curectOperation.charAt(curectOperation.length -1 ) === '0' && curectOperation.charAt(0) === '0'){
+                }
+                else{
+                    if(value !== '.' && curectOperation.charAt(0)=== '0' && curectOperation.charAt(1) !== '.'){
+                        setCurrentOperation('' + value);
+                    }
+                    else{
+                        setCurrentOperation(curectOperation + value);
+                    }
+                }
             }
         }
     }
